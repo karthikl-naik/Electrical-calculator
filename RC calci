@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+float calculate_vc(float V, float R, float C, float t) {
+    return V * (1 - exp(-t / (R * C)));
+}
+int main()
+{
+    float R, C, V, t;
+    printf("Enter resistance (R): ");
+    scanf("%f", &R);
+    printf("Enter capacitance (C): ");
+    scanf("%f", &C);
+    printf("Enter voltage (V): ");
+    scanf("%f", &V);
+    printf("Enter time (t): ");
+    scanf("%f", &t);
+    float Vc = calculate_vc(V, R, C, t);
+    printf("Voltage across capacitor (Vc): %.2f V\n", Vc);
+    return 0;
+}
