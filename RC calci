@@ -64,4 +64,27 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+#include <math.h>
+float calculate_three_phase_power(float V, float I, float pf)
+{
+    return sqrt(3) * V * I * pf;
+}
+
+int main() {
+    float V, I, pf;
+
+    printf("Enter line voltage (V): ");
+    scanf("%f", &V);
+    printf("Enter line current (I): ");
+    scanf("%f", &I);
+    printf("Enter power factor: ");
+    scanf("%f", &pf);
+
+    float P = calculate_three_phase_power(V, I, pf);
+
+    printf("Three-phase power: %.2f W\n", P);
+
+    return 0;
+}
 
