@@ -44,3 +44,24 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+#include <math.h>
+
+// Function to calculate power factor
+float calculate_pf(float angle) {
+    return cos(angle * M_PI / 180);
+}
+
+int main() {
+    float angle;
+
+    printf("Enter power factor angle (degrees): ");
+    scanf("%f", &angle);
+
+    float pf = calculate_pf(angle);
+
+    printf("Power factor: %.2f\n", pf);
+
+    return 0;
+}
+
