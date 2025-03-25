@@ -18,3 +18,29 @@ int main()
     printf("Voltage across capacitor (Vc): %.2f V\n", Vc);
     return 0;
 }
+#include <stdio.h>
+#include <math.h>
+float calculate_il(float V, float R, float L, float t)
+{
+    return (V / R) * (1 - exp(-t / (L / R)));
+}
+
+int main()
+{
+    float R, L, V, t;
+
+    printf("Enter resistance (R): ");
+    scanf("%f", &R);
+    printf("Enter inductance (L): ");
+    scanf("%f", &L);
+    printf("Enter voltage (V): ");
+    scanf("%f", &V);
+    printf("Enter time (t): ");
+    scanf("%f", &t);
+
+    float Il = calculate_il(V, R, L, t);
+
+    printf("Current through inductor (Il): %.2f A\n", Il);
+
+    return 0;
+}
