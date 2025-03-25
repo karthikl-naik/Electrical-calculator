@@ -87,4 +87,24 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+float calculate_motor_efficiency(float input_power, float output_power) {
+    return (output_power / input_power) * 100;
+}
+
+int main() {
+    float input_power, output_power;
+
+    printf("Enter input power to motor (W): ");
+    scanf("%f", &input_power);
+    printf("Enter output power from motor (W): ");
+    scanf("%f", &output_power);
+
+    float efficiency = calculate_motor_efficiency(input_power, output_power);
+
+    printf("Motor efficiency: %.2f%%\n", efficiency);
+
+    return 0;
+}
+
 
